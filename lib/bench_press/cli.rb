@@ -86,7 +86,7 @@ module BenchPress
     end
 
     def publish
-      if email && email.any?
+      if email && !email.empty?
         measurable.email email
         puts measurable.report; puts
         puts RubyBenchmark.publish(measurable, file_path)
